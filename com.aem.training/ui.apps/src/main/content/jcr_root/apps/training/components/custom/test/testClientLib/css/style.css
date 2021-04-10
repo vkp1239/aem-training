@@ -1,0 +1,48 @@
+body{
+margin-left:20%;
+    margin-right:20%;
+
+}
+
+.title {
+    color:#ff0099;
+
+    }
+.item {
+	color:#d1233be6;
+
+    }
+.breadCrumb  {
+    margin-left:20px;
+    color:#2700ff;
+
+    }
+
+    .nav-container{
+margin-bottom:20px;
+
+        }
+
+.jsParagraph {
+color:red;
+
+    }
+.color-blue{
+	background-color:blue;
+    }
+
+    .color-green{
+	background-color:green;
+    }
+
+    .color-grey{
+	background-color:#A9A9A9;
+    }
+
+       .color-white{
+	background-color:white;
+    }
+
+               .color-yellow{
+	background-color:yellow;
+    }

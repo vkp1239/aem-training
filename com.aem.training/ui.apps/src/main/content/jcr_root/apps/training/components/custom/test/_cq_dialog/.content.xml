@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Text"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_text_v2"
+    trackingFeature="core-components:text:v2">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        granite:class="cq-RichText-FixedColumn-column"
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <heading
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Leave empty to use the page title."
+                                                fieldLabel="Title"
+                                                name="./heading"/>
+                                            <multifield
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                eaem-show-on-collapse="EAEM.showProductName"
+                                                fieldLabel="MultiField"
+                                                validation="multifield-max-6">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./multifield">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <column
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <product
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    fieldDescription="Name of Product"
+                                                                    fieldLabel="Product Name"
+                                                                    name="./product"/>
+                                                            </items>
+                                                        </column>
+                                                    </items>
+                                                </field>
+                                            </multifield>
+                                            <dropdown
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="DropDown"
+                                                name="./dropdown">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".list-option-dropdown-showhide-target"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <men
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Men"
+                                                        value="men"/>
+                                                    <women
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Women"
+                                                        value="women"/>
+                                                </items>
+                                            </dropdown>
+                                            <setMen
+                                                granite:class="hide list-option-dropdown-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="men"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Options for men"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <shirt
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                class="cq-dialog-checkbox-showhide"
+                                                                cq-dialog-checkbox-showhide-target=".button-option-shirt-showhide-target"
+                                                                fieldDescription="Check for Shirt"
+                                                                id="shirt"
+                                                                name="./shirt"
+                                                                text="Need Shirt?"
+                                                                uncheckedValue="false"
+                                                                value="true"/>
+                                                            <trouser
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Check for trouser"
+                                                                name="./trouser"
+                                                                text="Need Trouser?"
+                                                                uncheckedValue="false"
+                                                                value="true"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </setMen>
+                                            <setWomen
+                                                granite:class="hide list-option-dropdown-showhide-target foundation-layout-util-vmargin"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="women"/>
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <heading
+                                                        granite:class="coral-Heading coral-Heading--4"
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="{Long}4"
+                                                        text="Options for Women"/>
+                                                    <well
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <top
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Check for Top"
+                                                                name="./top"
+                                                                text="Need Top?"
+                                                                uncheckedValue="false"
+                                                                value="true"/>
+                                                            <jeans
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                fieldDescription="Check for Jeans"
+                                                                name="./jeans"
+                                                                text="Need Jeans?"
+                                                                uncheckedValue="false"
+                                                                value="true"/>
+                                                        </items>
+                                                    </well>
+                                                </items>
+                                            </setWomen>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

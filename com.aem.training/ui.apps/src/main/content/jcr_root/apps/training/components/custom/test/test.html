@@ -1,0 +1,27 @@
+<span><h1>Parent Page</h1>
+	<h4>${currentPage.getParent.title}</h4></span>
+<div class="nav-container"
+	data-sly-list.child="${currentPage.listChildren}">
+	<a href="${child.getPath}.html" class="breadCrumb">${child.Title}</a>
+	${childList.index}
+</div>
+<sly data-sly-use.jsObject="${'component.js' @value1='Online'}" />
+${pageProperties.cq:template}
+
+<p class="jsParagraph">${jsObject.greetings}</p>
+<h1>This is ${component.title} Component</h1>
+
+<sly
+	data-sly-use.customModel="${'training.core.models.MyCustomModel' @color = 'red'}"></sly>
+<p class="heading">${customModel.getHeading}</p>
+<p>Page Path is ::: ${customModel.pagePath}</p>
+<p class="title">Title is ::: ${customModel.title}</p>
+<p>Parameter Passed to Model Class ::: ${customModel.color}</p>
+<p class="createdBy">Page Created by ::: ${customModel.createdBy}</p>
+<ul
+	data-sly-list.myitem="${customModel.multifield  @ begin = 0, step = 2 ,end = 10}">
+	<ul class="item">${myitemList.index}${myitem.product}
+	</ul>
+</ul>
+<sly data-sly-include="include.html" />
+
