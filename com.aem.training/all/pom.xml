@@ -50,6 +50,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <group>training</group>
+                    <allowIndexDefinitions>true</allowIndexDefinitions> 
                     <embeddeds>
                         <embedded>
                             <groupId>com.aem.training</groupId>
@@ -81,7 +82,31 @@
                             <type>zip</type>
                             <target>/apps/training-vendor-packages/content/install</target>
                         </embedded>
+                         <embedded>
+                    <groupId>com.adobe.acs</groupId>
+                    <artifactId>acs-aem-commons-ui.apps</artifactId>
+                    <type>zip</type>
+                    <target>/apps/training-packages/application/install</target>
+                </embedded>
+                <embedded>
+                    <groupId>com.adobe.acs</groupId>
+                    <artifactId>acs-aem-commons-ui.content</artifactId>
+                    <type>zip</type>
+                    <target>/apps/training-packages/content/install</target>
+                </embedded>
                     </embeddeds>
+                    <subPackages>
+                         <subpackage>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-content</artifactId>
+                            <filter>true</filter>
+                        </subpackage>
+                        <subPackage>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.all</artifactId>
+                            <filter>true</filter>
+                        </subPackage> 
+                       </subPackages> 
                 </configuration>
             </plugin>
             <plugin>
@@ -176,6 +201,12 @@
             <artifactId>com.aem.training.ui.apps</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-content</artifactId>
+            <type>zip</type>
+            <classifier>min</classifier>
         </dependency>
         <dependency>
             <groupId>com.aem.training</groupId>
