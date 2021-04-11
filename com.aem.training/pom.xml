@@ -39,6 +39,7 @@
 		<bnd.version>5.1.2</bnd.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<com.adobe.acs.commons.version>4.7.2</com.adobe.acs.commons.version>				
 	</properties>
 
 	<build>
@@ -400,7 +401,7 @@
 		<profile>
 			<id>autoInstallPackage</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<build>
 				<pluginManagement>
@@ -566,6 +567,23 @@
 				<artifactId>core.wcm.components.core</artifactId>
 				<version>${core.wcm.components.version}</version>
 			</dependency>
+			<!--ACS Commons Bundle for compile -->	
+            <dependency>
+                <groupId>com.adobe.acs</groupId>
+                <artifactId>acs-aem-commons-bundle</artifactId>
+                <version>${com.adobe.acs.commons.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!--ACS Commons Content for bundle install -->
+            <dependency>
+                <groupId>com.adobe.acs</groupId>
+                <artifactId>acs-aem-commons-content</artifactId>
+                <version>${com.adobe.acs.commons.version}</version>
+                <type>zip</type>
+                <classifier>min</classifier>
+                <scope>provided</scope>
+            </dependency> 			
 			<dependency>
 				<groupId>com.adobe.cq</groupId>
 				<artifactId>core.wcm.components.content</artifactId>
