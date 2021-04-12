@@ -14,7 +14,8 @@ ${pageProperties.cq:template}
 <p class = "title">${'Title' @ i18n} ::: ${customModel.title}</p>
 <p>Parameter Passed to Model Class ::: ${customModel.color}</p>
 <p class = "createdBy">Page Created by ::: ${customModel.createdBy}</p>
-<ul data-sly-list.myitem="${customModel.multifield  @ begin = 0, step = 1 }">
+<!--/* end can be removed if  step is required till the end */-->
+<ul data-sly-list.myitem="${customModel.multifield  @ begin = 0, step = 1 , end = 4}">
    <ul class ="item" >${myitem.product}</ul>
 </ul>
 <sly data-sly-include = "include.html"/>
