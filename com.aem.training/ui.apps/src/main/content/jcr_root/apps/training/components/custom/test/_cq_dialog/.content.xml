@@ -37,6 +37,20 @@
                                                 fieldDescription="Leave empty to use the page title."
                                                 fieldLabel="Title"
                                                 name="./heading"/>
+                                            <firstname
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter first name."
+                                                fieldLabel="First Name"
+                                                name="./fname"
+                                                validation="first-name"/>
+                                            <lastname
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Please enter last name."
+                                                fieldLabel="Last Name"
+                                                name="./lname"
+                                                validation="last-name"/>
                                             <multifield
                                                 granite:class="training-multifield"
                                                 jcr:primaryType="nt:unstructured"
@@ -59,8 +73,7 @@
                                                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                                     fieldDescription="Name of Product"
                                                                     fieldLabel="Product Name"
-                                                                    name="./product"
-                                                                    validation="product-name"/>
+                                                                    name="./product"/>
                                                             </items>
                                                         </column>
                                                     </items>

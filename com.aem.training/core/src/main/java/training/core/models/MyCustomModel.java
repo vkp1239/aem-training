@@ -8,10 +8,7 @@ import javax.inject.Named;
 
 import org.apache.log4j.Logger;
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
@@ -22,7 +19,6 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.RequestAttribute;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.osgi.service.component.annotations.Reference;
 
 import training.core.services.CustomService;
 
@@ -37,7 +33,7 @@ public class MyCustomModel {
 
 	/** The Constant LOGGER. */
 	private static final Logger LOGGER = Logger.getLogger(MyCustomModel.class);
-	
+
 	/** The resource. */
 	@SlingObject
 	Resource resource;
@@ -51,6 +47,27 @@ public class MyCustomModel {
 	@Via("resource")
 	@Default(values = "Default Heading")
 	private String heading;
+
+	@Inject
+	@Via("resource")
+	private String fname;
+
+	@Inject
+	@Via("resource")
+	private String lname;
+
+	/**
+	 * Gets the fname.
+	 *
+	 * @return the fname
+	 */
+	public String getFname() {
+		return fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
 
 	/** The multifield. */
 	@Inject
@@ -67,29 +84,20 @@ public class MyCustomModel {
 	/** The page. */
 	@ScriptVariable(name = "currentPage")
 	Page page;
-	
+
 	@OSGiService
 	CustomService custService;
-	
-	/*@Inject
-	private ResourceResolverFactory resourceResolverFactory;
-*/
+
 	/**
 	 * Inits the.
 	 */
 	@PostConstruct
 	public void init() {
-		
-		heading = custService.userName()+page.getPath();
+
+		heading = heading != null ? heading : page.getTitle();
+		heading = heading != null ? heading : "Default Title";
 		heading = "Heading Goes here::: " + heading;
 		LOGGER.info("Inside init():::");
-		/*try {
-			ResourceResolver resolver = custService.getResourceResolver(resourceResolverFactory);
-		} catch (LoginException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-
 	}
 
 	/**
@@ -98,10 +106,6 @@ public class MyCustomModel {
 	 * @return the title
 	 */
 	public String getTitle() {
-		/*
-		 * ValueMap valueMap = resource.getValueMap(); return
-		 * valueMap.get("jcr:").toString()
-		 */;
 		return page.getTitle();
 	}
 
