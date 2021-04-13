@@ -1,14 +1,16 @@
+<sly data-sly-use.customModel="${'training.core.models.MyCustomModel' @color = 'red'}"></sly>
 <h1> Parent Page </h1>
 <h4>${currentPage.getParent.title}</h4>
 <div class="nav-container" data-sly-list.child = "${currentPage.listChildren}">
    <a  href = "${child.getPath}.html" class="breadCrumb" >${child.Title}</a>
    ${childList.index}
 </div>
+<h3> Hello ${customModel.fname}  ${customModel.lname} </h3>
 <sly data-sly-use.jsObject = "${'component.js' @value1='Online'}"/>
 ${pageProperties.cq:template}
 <p class= "jsParagraph">${jsObject.greetings}</p>
 <h1>This is ${component.title} Component</h1>
-<sly data-sly-use.customModel="${'training.core.models.MyCustomModel' @color = 'red'}"></sly>
+
 <p class= "heading">${customModel.getHeading}</p>
 <p>Page Path is ::: ${customModel.pagePath}</p>
 <p class = "title">${'Title' @ i18n} ::: ${customModel.title}</p>

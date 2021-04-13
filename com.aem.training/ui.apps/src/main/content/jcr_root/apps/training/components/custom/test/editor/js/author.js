@@ -28,13 +28,26 @@
     });
 
     registry.register("foundation.validation.validator", {
-        selector: "[data-validation=product-name]",
+        selector: "[data-validation=first-name]",
         validate: function(element) {
             let el = $(element);
-            let pattern=/[0-9]/;
+            let pattern=/[^a-zA-Z ]/;
             let value=el.val();
             if(pattern.test(value)){
-               return "Please add only  Letters in Product Name";
+               return "Special characters or number is not allowed.";
+            }
+
+        }
+    });
+
+     registry.register("foundation.validation.validator", {
+        selector: "[data-validation=last-name]",
+        validate: function(element) {
+            let el = $(element);
+            let pattern=/[^a-zA-Z0-9 ]/;
+            let value=el.val();
+            if(pattern.test(value)){
+               return "Special characters are not allowed";
             }
 
         }
