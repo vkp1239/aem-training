@@ -9,10 +9,12 @@
                 <responsivegrid jcr:primaryType="nt:unstructured">
                     <content-default
                         jcr:description="Policy for editable layout containers"
+                        jcr:lastModified="{Date}2021-04-13T09:20:58.549+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="training Default"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        components="[group:training.Content,/apps/training/components/form/container,group:training.Structure]"
+                        components="[group:Training Custom,group:training.Content,/apps/training/components/form/container,group:training.Structure]"
                         policyResourceType="wcm/foundation/components/responsivegrid">
                         <cq:authoring jcr:primaryType="nt:unstructured">
                             <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -281,7 +283,7 @@
                         jcr:title="training Experience Fragment - Footer"
                         sling:resourceType="wcm/core/components/policy/policy">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
-                </policy_footer>
+                    </policy_footer>
                 </experiencefragment>
             </content>
             <structure jcr:primaryType="nt:unstructured">
@@ -295,15 +297,57 @@
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </policy_xfm>
                     <policy_content_page
+                        jcr:lastModified="{Date}2021-04-13T09:22:19.602+05:30"
+                        jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="training Page Policy"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        clientlibs="[training.dependencies,training.site]"
+                        clientlibs="[training.dependencies,training.site,training.test]"
                         clientlibsJsHead="training.dependencies">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </policy_content_page>
                 </page>
             </structure>
+            <custom jcr:primaryType="nt:unstructured">
+                <test jcr:primaryType="nt:unstructured">
+                    <policy_1618285862197
+                        jcr:lastModified="{Date}2021-04-13T09:22:01.599+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title=" test-component policy"
+                        sling:resourceType="wcm/core/components/policy/policy">
+                        <jcr:content jcr:primaryType="nt:unstructured"/>
+                        <cq:styleGroups jcr:primaryType="nt:unstructured">
+                            <item0
+                                cq:styleGroupLabel="BackgroundColor"
+                                jcr:primaryType="nt:unstructured">
+                                <cq:styles jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        cq:styleClasses="color-yellow"
+                                        cq:styleId="1618285869483"
+                                        cq:styleLabel="Yellow"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item1
+                                        cq:styleClasses="color-green"
+                                        cq:styleId="1618285873176"
+                                        cq:styleLabel="Green"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item2
+                                        cq:styleClasses="color-grey"
+                                        cq:styleId="1618285876374"
+                                        cq:styleLabel="Grey"
+                                        jcr:primaryType="nt:unstructured"/>
+                                    <item3
+                                        cq:styleClasses="color-white"
+                                        cq:styleId="1618285880042"
+                                        cq:styleLabel="White"
+                                        jcr:primaryType="nt:unstructured"/>
+                                </cq:styles>
+                            </item0>
+                        </cq:styleGroups>
+                    </policy_1618285862197>
+                </test>
+            </custom>
         </components>
     </training>
 </jcr:root>
