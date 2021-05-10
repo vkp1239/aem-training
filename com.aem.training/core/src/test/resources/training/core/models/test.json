@@ -1,0 +1,46 @@
+{
+	"test": {
+		"jcr:primaryType": "nt:unstructured",
+		"jcr:createdBy": "admin",
+		"jcr:lastModifiedBy": "admin",
+		"trouser": "false",
+		"dropdown": "men",
+		"jcr:created": "Sat Sep 26 2020 18:58:47 GMT+0530",
+		"top": "false",
+		"fname": "Vineet",
+		"jeans": "false",
+		"lname": "Pandey2",
+		"shirt": "false",
+		"dynamicDropdown": "hi",
+		"heading": "This is Heading Authored by vineet pandey",
+		"jcr:lastModified": "Tue Apr 13 2021 10:00:21 GMT+0530",
+		"sling:resourceType": "training/components/custom/test",
+		"listFrom": "static",
+		"cq:styleIds": [
+			"1618285873176"
+		],
+		"multifield": {
+			"jcr:primaryType": "nt:unstructured",
+			"item0": {
+				"jcr:primaryType": "nt:unstructured",
+				"product": "Product1"
+			},
+			"item1": {
+				"jcr:primaryType": "nt:unstructured",
+				"product": "Product2"
+			},
+			"item2": {
+				"jcr:primaryType": "nt:unstructured",
+				"product": "Product3"
+			},
+			"item3": {
+				"jcr:primaryType": "nt:unstructured",
+				"product": "Product4"
+			},
+			"item4": {
+				"jcr:primaryType": "nt:unstructured",
+				"product": "Product5"
+			}
+		}
+	}
+}
