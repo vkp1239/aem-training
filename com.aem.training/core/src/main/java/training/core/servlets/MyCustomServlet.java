@@ -17,6 +17,10 @@ import org.osgi.service.component.annotations.Reference;
 import training.core.services.CustomService;
 import training.core.util.ResolverUtil;
 
+/**
+ * The Class MyCustomServlet.
+ * Servlet sample based on resourceTypes
+ */
 @Component(service = Servlet.class, property = { Constants.SERVICE_DESCRIPTION + "=Simple custom Servlet",
 		"sling.servlet.methods=" + HttpConstants.METHOD_GET,
 		"sling.servlet.resourceTypes=" + "training/components/structure/page", "sling.servlet.selectors=" + "select"
@@ -25,17 +29,20 @@ import training.core.util.ResolverUtil;
 })
 public class MyCustomServlet extends SlingSafeMethodsServlet {
 
-	/**
-	 * 
-	 */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The custom service. */
 	@Reference
 	CustomService customService;
 
+	/** The resource resolver factory. */
 	@Reference
 	ResourceResolverFactory resourceResolverFactory;
 
+	/* (non-Javadoc)
+	 * @see org.apache.sling.api.servlets.SlingSafeMethodsServlet#doGet(org.apache.sling.api.SlingHttpServletRequest, org.apache.sling.api.SlingHttpServletResponse)
+	 */
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException,
 			IOException {

@@ -14,6 +14,10 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The Class CustomServlet.
+ * Servlet sample based on path
+ */
 @Component(service = Servlet.class, immediate = true, property = {
 		Constants.SERVICE_DESCRIPTION + "=my Custom Servlet", "sling.servlet.paths=" + "/bin/myCustomServlet",
 		"sling.servlet.methods=" + HttpConstants.METHOD_GET, "sling.servlet.extensions=" + "txt"
@@ -25,6 +29,7 @@ public class CustomServlet extends SlingAllMethodsServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	Logger log = LoggerFactory.getLogger(CustomServlet.class);
 
 	/**
