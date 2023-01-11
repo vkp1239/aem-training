@@ -38,6 +38,7 @@ public class SearchServlet extends SlingSafeMethodsServlet{
 	
 	private static final Logger LOGGER= LoggerFactory.getLogger(SearchServiceImpl.class);
 	
+	/** The Get Method.*/
 	@Override
     protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp) throws ServletException, IOException {
         JSONObject searchResult=null;
