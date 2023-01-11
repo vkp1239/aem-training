@@ -26,9 +26,8 @@ import com.day.cq.commons.jcr.JcrConstants;
 @Component(service = Servlet.class, immediate = true, property = {
 		Constants.SERVICE_DESCRIPTION + "=Simple custom Servlet", "sling.servlet.resourceTypes=" + "/apps/dropdown" })
 public class DropDownServlet extends SlingSafeMethodsServlet {
-	/**
-	 * 
-	 */
+	
+	/** The Constant serialVersionUID.*/
 	private static final long serialVersionUID = 1L;
 
 	@Override
