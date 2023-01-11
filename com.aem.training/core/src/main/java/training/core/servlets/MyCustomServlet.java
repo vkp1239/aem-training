@@ -40,8 +40,7 @@ public class MyCustomServlet extends SlingSafeMethodsServlet {
 	@Reference
 	ResourceResolverFactory resourceResolverFactory;
 
-	/* (non-Javadoc)
-	 * @see org.apache.sling.api.servlets.SlingSafeMethodsServlet#doGet(org.apache.sling.api.SlingHttpServletRequest, org.apache.sling.api.SlingHttpServletResponse)
+	/* doGet.
 	 */
 	@Override
 	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServerException,
