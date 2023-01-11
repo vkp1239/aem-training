@@ -48,6 +48,7 @@ public class MyCustomModel {
 	@Default(values = "Default Heading")
 	private String heading;
 
+	/** The First Name. */
 	@Inject
 	@Via("resource")
 	private String fname;
